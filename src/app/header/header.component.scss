@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    cursor: pointer;
+  }
+}
+
+.right-side-container {
+  display: flex;
+  align-items: center;
+}
+
+.logout-container {
+  margin-left: 64px;
+}

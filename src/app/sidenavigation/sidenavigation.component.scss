@@ -1,0 +1,13 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.open {
+  @media (min-width: 1050px) {
+    width: 300px;
+  }
+}
+
+.d-none {
+  display: none;
+}
