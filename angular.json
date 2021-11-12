@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "dao-chatapp:build:production",
+            "firebaseProject": "dao-chatapp",
+            "firebaseHostingSite": "dao-chatapp"
+          }
         }
       }
     }

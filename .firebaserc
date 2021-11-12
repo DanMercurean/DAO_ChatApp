@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dao-chatapp": {
+      "hosting": {
+        "dao-chatapp": [
+          "dao-chatapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dao-chatapp"
+  }
+}
