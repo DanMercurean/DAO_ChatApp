@@ -29,6 +29,10 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
@@ -63,7 +67,10 @@ import { AuthService } from "./shared/services/auth.service";
     MatListModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

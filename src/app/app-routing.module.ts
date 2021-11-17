@@ -10,6 +10,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 
+
 const routes: Routes = [
   { path: 'channel/:name', component: ChannelComponent },
   { path: '', component: WelcomeComponent },
