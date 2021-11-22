@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
 
@@ -77,11 +77,11 @@ export class AuthService {
   // //   })
   // // }
 
-  // // Returns true when user is looged in and email is verified
-  // // get isLoggedIn(): boolean {
-  // //   const user = JSON.parse(localStorage.getItem('user'));
-  // //   return (user !== null && user.emailVerified !== false) ? true : false;
-  // // }
+  // Returns true when user is looged in and email is verified
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') ?? '');
+    return (user !== null && user.emailVerified !== false) ? true : false;
+  }
 
   // // Sign in with Google
   // // GoogleAuth() {
