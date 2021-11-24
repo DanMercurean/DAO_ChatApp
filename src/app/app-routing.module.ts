@@ -13,14 +13,13 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 
 const routes: Routes = [
   { path: 'channel/:name', component: ChannelComponent },
-  { path: '', component: WelcomeComponent },
-  { path: '**', redirectTo: '' },
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  // { path: '**', redirectTo: '' },
+  { path: '', component: DashboardComponent },
+  { path: 'singin', component: SignInComponent },
+  { path: 'signup', component: SignUpComponent },
+  // { path: 'dashboard', component: DashboardComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'verifyemailaddress', component: VerifyEmailComponent }
   
 ];
 

@@ -12,13 +12,13 @@ export class HeaderComponent implements OnInit {
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.newUser();
+    //this.newUser();
     this
       .firestore
       .collection('Users')
       .valueChanges()
-      .subscribe((user) => {
-        console.log('Curent user', user);
+      .subscribe((users) => {
+        console.log('Curent user', users);
       });
 
   }
@@ -26,6 +26,6 @@ export class HeaderComponent implements OnInit {
     //this.user = new User();
     this.firestore
     .collection('Users')
-    .add({'Hallo':'Welt'});
+    .add({'Hallo':'Welt'}); 
   }
 }

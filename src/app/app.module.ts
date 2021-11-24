@@ -31,6 +31,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -69,7 +70,8 @@ import { AuthService } from "./shared/services/auth.service";
     MatFormFieldModule,
     MatInputModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatSnackBarModule
 
   ],
   providers: [AuthService],
