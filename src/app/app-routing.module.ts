@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'channel/:name', component: ChannelComponent },
   // { path: '**', redirectTo: '' },
   { path: '', component: DashboardComponent },
-  { path: 'singin', component: SignInComponent },
-  { path: 'signup', component: SignUpComponent },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent },
   // { path: 'dashboard', component: DashboardComponent },
   { path: 'forgotpassword', component: ForgotPasswordComponent },
   { path: 'verifyemailaddress', component: VerifyEmailComponent }

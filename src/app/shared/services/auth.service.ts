@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AuthService {
   userData: any; // Save logged in user data
   user: any;
+  
   
 
   constructor(
@@ -73,20 +76,20 @@ export class AuthService {
   }
 
   // // Reset Forggot password
-  // // ForgotPassword(passwordResetEmail) {
-  // //   return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
-  // //   .then(() => {
-  // //     window.alert('Password reset email sent, check your inbox.');
-  // //   }).catch((error) => {
-  // //     window.alert(error)
-  // //   })
-  // // }
+  ForgotPassword(passwordResetEmail: any) {
+    return this.auth.sendPasswordResetEmail(passwordResetEmail)
+    .then(() => {
+      window.alert('Password reset email sent, check your inbox.');
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
 
   // Returns true when user is looged in and email is verified
-  // get isLoggedIn(): boolean {
-  //   const user = JSON.parse(localStorage.getItem('user') ?? '');
-  //   return (user !== null && user.emailVerified !== false) ? true : false;
-  // }
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') ?? '');
+    return (user !== null && user.emailVerified !== false) ? true : false;
+  }
 
   // // Sign in with Google
   // // GoogleAuth() {
@@ -124,11 +127,11 @@ export class AuthService {
   }
 
   // // Sign out 
-  // // SignOut() {
-  // //   return this.afAuth.auth.signOut().then(() => {
-  // //     localStorage.removeItem('user');
-  // //     this.router.navigate(['sign-in']);
-  // //   })
-  // // }
+  SignOut() {
+    return this.auth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['sign-in']);
+    })
+  }
 
 }

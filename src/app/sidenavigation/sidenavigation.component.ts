@@ -8,7 +8,7 @@ import { MatToolbar } from '@angular/material/toolbar';
 })
 export class SidenavigationComponent implements OnInit {
 
-  links: Array<String> = ['html-css', 'javascript'];
+  links: Array<String> = ['html-css', 'javascript', 'sign-in'];
 
   constructor() { }
 
