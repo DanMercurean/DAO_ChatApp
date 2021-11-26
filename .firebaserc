@@ -9,6 +9,7 @@
     }
   },
   "projects": {
-    "default": "dao-chatapp"
+    "default": "dao-chatapp",
+    "learning": "dao-chatapp"
   }
 }
