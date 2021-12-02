@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
     user: Observable<any> | undefined;              // Example: store the user's info here (Cloud Firestore: collection is 'users', docId is the user's email, lower case)
 
-    constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+    constructor(public afAuth: AngularFireAuth, private firestore: AngularFirestore) {
       this.user = null!;
     }
 

@@ -27,9 +27,9 @@ export class AuthService {
         return this.afAuth.signInWithEmailAndPassword(email, password)
             .then(() => {
                 console.log('Auth Service: loginUser: success');
-                // this.router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard']);
             })
-            .catch( (error): any => {
+            .catch((error): any => {
                 console.log('Auth Service: login error...');
                 console.log('error code', error.code);
                 console.log('error', error);
@@ -52,9 +52,9 @@ export class AuthService {
                         email_lower: emailLower
                     });
 
-                    //result.user.sendEmailVerification();                    // immediately send the user a verification email
+               // result.user.sendEmailVerification();                    // immediately send the user a verification email
             })
-            .catch( (error): any => {
+            .catch((error): any => {
                 console.log('Auth Service: signup error', error);
                 if (error.code)
                     return { isValid: false, message: error.message };
@@ -65,7 +65,7 @@ export class AuthService {
         return this.afAuth.sendPasswordResetEmail(email)
             .then(() => {
                 console.log('Auth Service: reset password success');
-                // this.router.navigate(['/amount']);
+                 this.router.navigate(['/amount']);
             })
             .catch(error => {
                 console.log('Auth Service: reset password error...');
@@ -76,19 +76,19 @@ export class AuthService {
             });
     }
 
-    async resendVerificationEmail() {                         // verification email is sent in the Sign Up function, but if you need to resend, call this function
-        return (await this.afAuth.currentUser).sendEmailVerification()
-            .then(() => {
-                // this.router.navigate(['home']);
-            })
-            .catch(error => {
-                console.log('Auth Service: sendVerificationEmail error...');
-                console.log('error code', error.code);
-                console.log('error', error);
-                if (error.code)
-                    return error;
-            });
-    }
+    // async resendVerificationEmail() {                         // verification email is sent in the Sign Up function, but if you need to resend, call this function
+    //     return (await this.afAuth.currentUser).sendEmailVerification()
+    //         .then(() => {
+    //              this.router.navigate(['home']);
+    //         })
+    //         .catch(error => {
+    //             console.log('Auth Service: sendVerificationEmail error...');
+    //             console.log('error code', error.code);
+    //             console.log('error', error);
+    //             if (error.code)
+    //                 return error;
+    //         });
+    // }
 
     logoutUser(): Promise<void> {
         return this.afAuth.signOut()
