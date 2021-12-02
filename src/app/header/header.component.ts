@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { createUserWithEmailAndPassword } from '@firebase/auth';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  //user: User;
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
       .firestore
       .collection('Users')
       .valueChanges()
-      .subscribe((users) => {
-        console.log('Curent user', users);
+      .subscribe(() => {
+        console.log('Curent user', createUserWithEmailAndPassword);
       });
 
   }

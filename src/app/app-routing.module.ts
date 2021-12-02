@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChannelComponent } from './channel/channel.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
+
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'channel/:name', component: ChannelComponent },
-  // { path: '**', redirectTo: '' },
-  { path: '', component: DashboardComponent },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  // { path: 'dashboard', component: DashboardComponent },
-  { path: 'forgotpassword', component: ForgotPasswordComponent },
-  { path: 'verifyemailaddress', component: VerifyEmailComponent }
-  
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: '**', component: HomeComponent },                       // catch-all in case no other path matched
+
 ];
 
 @NgModule({
