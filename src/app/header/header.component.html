@@ -7,7 +7,19 @@
       <span>Logged in as: user</span>
     </div>
     <div class="logout-container">
-      <a>Log out</a>
+      <button mat-raised-button color="primary" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Log out</span>
+    </button>
     </div>
   </div>
+
 </mat-toolbar>
+<mat-card *ngIf="(afAuth.user | async)">
+  <mat-icon>check_circle</mat-icon>
+  <span>User is logged in</span>
+</mat-card>
+<mat-card *ngIf="!(afAuth.user | async)">
+  <mat-icon>do_not_disturb</mat-icon>
+  <span>User is not logged in</span>
+</mat-card>

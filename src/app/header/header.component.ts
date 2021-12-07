@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
+import { AngularFireAuth } from '@angular/fire//compat/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-header',
@@ -9,23 +10,27 @@ import { createUserWithEmailAndPassword } from '@firebase/auth';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(public afAuth: AngularFireAuth, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     //this.newUser();
-    this
-      .firestore
-      .collection('Users')
-      .valueChanges()
-      .subscribe(() => {
-        console.log('Curent user', createUserWithEmailAndPassword);
-      });
+    // this
+    //   .firestore
+    //   .collection('Users')
+    //   .valueChanges()
+    //   .subscribe(() => {
+    //     console.log('Curent user', createUserWithEmailAndPassword);
+    //   });
 
   }
   newUser() {
     //this.user = new User();
-    this.firestore
-    .collection('Users')
-    .add({'Hallo':'Welt'}); 
+    // this.firestore
+    // .collection('Users')
+    // .add({'Hallo':'Welt'}); 
   }
+ logout(): void {
+    this.afAuth.signOut();
+}
+
 }

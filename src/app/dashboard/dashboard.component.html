@@ -7,6 +7,14 @@ Dashboard
     <span>Home</span>
 </button>
 
+<div class="app-container">
+    <app-header></app-header>
+    <div class="main-view">
+      <app-sidenavigation></app-sidenavigation>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  
 <mat-list *ngIf="(user | async)">
     <mat-list-item>Account Type: {{ (user | async)?.accountType }}</mat-list-item>
     <mat-list-item>Display Name: {{ (user | async)?.displayName }}</mat-list-item>
